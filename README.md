@@ -1,2 +1,2 @@
-# OpponencyPaper
-Code for the opponency paper
+# OpponencyModels
+Code for the models for direction opponency
