@@ -91,7 +91,7 @@ clearvars r1 r2 r3;
 
 %% Allocate containers to store model responses
 
-numModel = 3;
+numModel = 5;
 % The format of the response arrays is [time x phase x numStim x numModel]
 
 modelVoltageResp = nan(numT, numShift, numStim, numModel);
@@ -165,6 +165,16 @@ modelVoltageResp(:,:,:,4) = resp1 + resp2 - resp3;
 
 % Apply the sigmoidal nonlinearity
 modelCalciumResp(:,:,:,4) = 1 ./ (1 + exp(-params.sigmoidK1*(modelVoltageResp(:,:,:,4) - params.sigmoidK2)));
+
+%% Compute half-quadratic LN model response
+
+% Compute the linear response
+% modelVoltageResp(:,:,:,5) = resp1 + resp2 - resp3;
+modelVoltageResp(:,:,:,5) = resp2 - resp3;
+
+% Define and apply the half-quadratic nonlinearity
+halfsquare = @(f) (f .* (f>0)).^2;
+modelCalciumResp(:,:,:,5) = halfsquare(modelVoltageResp(:,:,:,5));
 
 %% Average model responses over time and phase
 

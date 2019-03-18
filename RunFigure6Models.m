@@ -23,7 +23,7 @@ numStim = 6;
 inputNames = {'PD','ND','PD+ND','PD+OD', 'CISSumPD', 'CISSumND'};
 
 % Define model names
-modelNames = {'Rectified multiplier', 'Dynamic gain nonlinearity', 'Conductance nonlinearity', 'Sigmoidal LN'};
+modelNames = {'Rectified multiplier', 'Dynamic gain nonlinearity', 'Conductance nonlinearity', 'Sigmoidal LN', 'Half-quadratic LN'};
 
 %% Run the models
 
