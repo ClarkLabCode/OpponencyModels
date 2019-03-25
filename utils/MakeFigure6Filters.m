@@ -69,10 +69,10 @@ filters.den = den / vecnorm(den(:));
 %% Define filters for adaptive nonlinearity model
 
 % Define the response function for the linear filter
-dsFilt = V2*g2*s2 + V3*g3*s3;
+dsFilt = params.alpha * s2 + params.beta * s3;
 
 % Define the response function for the linear filter
-adaptFilt = V1*g1*s1;
+adaptFilt = - params.gamma * s1;
 
 % Normalize the filters
 filters.dsFilt = dsFilt / vecnorm(dsFilt(:));

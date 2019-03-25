@@ -76,7 +76,7 @@ localConfAxis(16);
 % Plot adaptation filter
 ca = max(max(max(abs(filters.dsFilt), abs(filters.adaptFilt))));
 figure('Position',[200,500,500,700],'WindowStyle','docked');
-imagesc(filters.x,filters.t,-filters.adaptFilt);
+imagesc(filters.x,filters.t,filters.adaptFilt);
 axis('square','tight');
 colormap(cmpBlueRed);
 cbar = colorbar;
