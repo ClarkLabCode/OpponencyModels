@@ -14,8 +14,8 @@ if any(selectedTf) && any(selectedCont)
     nd = nanmean(modelResp{selectedTf, selectedCont}(:, 1, 2),2);
     
     % Predict the PD and ND response from the CIS responses
-    cp = nanmean(modelResp{selectedTf, selectedCont}(:, 1:8, 5),2);
-    cn = nanmean(modelResp{selectedTf, selectedCont}(:, 1:8, 6),2);
+    cp = sum(modelResp{selectedTf, selectedCont}(:, 1:8, 5),2)/4;
+    cn = sum(modelResp{selectedTf, selectedCont}(:, 1:8, 6),2)/4;
     
     figure('Position',[200,500,500,700],'WindowStyle','docked');
     sp(1) = subplot(2,1,1);

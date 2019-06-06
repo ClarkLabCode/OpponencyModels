@@ -59,8 +59,8 @@ xtPlot(:,:,4,:) = sin(tVec - xVec - phi) + sin(tVec + phi2);
 
 % CIS for linearity analysis
 phiLin = (0:1:7)/8*pi; % Phase offsets used in Wienecke et al. 2018
-xtPlot(:,1:8,5,:) = sin((tVec + phiLin) - (xVec + phiLin)) + sin((tVec + phiLin) + (xVec + phiLin));
-xtPlot(:,1:8,6,:) = sin((tVec - phiLin) - (xVec + phiLin)) + sin((tVec - phiLin) + (xVec + phiLin));
+xtPlot(:,1:8,5,:) = sin(tVec + phiLin - pi/2) .* sin(xVec + phiLin);
+xtPlot(:,1:8,6,:) = sin(tVec + phiLin + pi/2) .* sin(xVec - phiLin);
 
 % Adjust contrasts and apply mask
 xtPlot = cont .* stimMask .* xtPlot;
