@@ -1,5 +1,5 @@
 # OpponencyModels
-Code for the models for direction opponency
+Code for the models for direction opponency from Badwan, B.A., Creamer, M.S., Zavatone-Veth, J.A., and Clark, D.A. Dynamic nonlinearities enable direction opponency in *Drosophila* elementary motion detectors. *Nature Neuroscience* 22, 1318–1326 (2019) doi: [10.1038/s41593-019-0443-y](https://doi.org/10.1038/s41593-019-0443-y)
 
 
 ## Feedforward models for direction-opponency
